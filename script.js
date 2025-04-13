@@ -1,22 +1,27 @@
 let wrongAttempts = 0;
 
-
 function checkPassword() {
-  const input = document.getElementById("passwordInput").value.trim();
-  const correctPassword = "ilovemyrakhiiii@69"; 
+  const inputEl = document.getElementById("passwordInput");
+  const inputValue = inputEl.value.trim();
+  const errorMsg = document.getElementById("errorMsg");
+  const correctPassword = "ilovemyrakhiiii@69";
 
-  if (input === correctPassword) {
+  if (inputValue === correctPassword) {
     document.getElementById("content").classList.remove("hidden");
+    errorMsg.classList.add("hidden");
+    inputEl.classList.remove("input-error");
+    inputEl.disabled = true;
   } else {
-    alert("Wrong password! Try again.");
+    wrongAttempts++;
+    errorMsg.classList.remove("hidden");
+    inputEl.classList.add("input-error");
     showNextHint();
   }
 }
 
 function showNextHint() {
   const hints = document.querySelectorAll(".hint");
-  if(wrongAttempts < hints.length) {
-    hints[wrongAttempts].classList.remove("hidden")
+  if (wrongAttempts <= hints.length) {
+    hints[wrongAttempts - 1].classList.remove("hidden");
   }
-  wrongAttempts++;
 }

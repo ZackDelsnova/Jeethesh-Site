@@ -85,3 +85,14 @@ img {
   margin-bottom: 5px;
 }
 
+.error-msg {
+  color: #ff5555;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.input-error {
+  border: 2px solid #ff5555;
+  outline: none;
+}
