@@ -66,3 +66,22 @@ img {
 .image-grid img:hover {
   transform: scale(1.05);
 }
+
+.hidden {
+  display: none;
+}
+
+.hints {
+  margin: 10px 0 20px;
+  text-align: left;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hint {
+  font-size: 0.9em;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
